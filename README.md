@@ -28,4 +28,9 @@ To run the application locally clone the application and type `npm install` in y
 * Restapi countries (for getting information of countries demographic details)
 
 ### Deployment
-* Deployed on netlify
+* [World Map Application](https://illustrious-arithmetic-bf3f8d.netlify.app/)
+  
+### Screenshots
+![india](https://github.com/11avnishkumar/Spearmint/assets/90856122/d64f2350-ca8e-42cb-9718-123eadfcf6f9)
+![spearmint](https://github.com/11avnishkumar/Spearmint/assets/90856122/bae9cba5-3461-41fe-8113-213b39911f1a)
+
