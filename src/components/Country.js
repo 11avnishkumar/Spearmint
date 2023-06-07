@@ -21,7 +21,7 @@ const Country = () => {
         };
 
         if (getSearch || clickedCountry) fetchData();
-    }, [getSearch, clickedCountry]);
+    }, [getSearch, clickedCountry,setCountryData]);
 
     return (
         <div className="rounded-lg bg-white shadow-md p-4">
