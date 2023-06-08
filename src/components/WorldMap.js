@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext,useEffect} from 'react';
 import { MapContainer, TileLayer,useMapEvents} from 'react-leaflet'
 import './map.css'
 import "leaflet/dist/leaflet.css"
@@ -7,11 +7,15 @@ import CountryName from './CountryName';
 import UserMarker from './Marker';
 
 const WorldMap = () => {
-  const {countryData,setClickedCountry} = useContext(context) // context data
+  const {countryData,setClickedCountry,setCountryData} = useContext(context) // context data
+
   
   const handleClick = async (e) => {
     const { lat, lng } = e.latlng;
-    setClickedCountry(await CountryName(lat, lng)); // set the countryName when user clicks on the map
+    
+    const country = await CountryName(lat, lng);
+    if(country) setClickedCountry(country); // set the countryName when user clicks on the map
+    
   };
 
   return (
