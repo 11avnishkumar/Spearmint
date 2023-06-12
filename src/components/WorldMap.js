@@ -7,8 +7,7 @@ import CountryName from './CountryName';
 import UserMarker from './Marker';
 
 const WorldMap = () => {
-  const {countryData,setClickedCountry,setCountryData} = useContext(context) // context data
-
+  const {countryData,setClickedCountry} = useContext(context) // context data
   
   const handleClick = async (e) => {
     const { lat, lng } = e.latlng;

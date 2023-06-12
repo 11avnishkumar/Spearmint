@@ -3,7 +3,7 @@ import { context } from '../context/Context'
 import CountryCard from './CountryCard';
 const Country = () => {
     // get all the context data 👇
-    const { getSearch, countryData, setCountryData, clickedCountry, } = useContext(context)
+    const { getSearch, countryData, setCountryData, clickedCountry} = useContext(context)
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -11,7 +11,7 @@ const Country = () => {
                 if (!response.ok) {
                     throw new Error('Request failed');
                 }
-                const data = await response.json();
+                const data = await response.json();            
                 const country = Array.isArray(data) ? data[0] : data;
                 setCountryData(country); // get the country data to render countries and also set for context api
                 

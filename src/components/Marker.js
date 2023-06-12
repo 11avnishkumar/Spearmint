@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Marker, Popup, useMap } from 'react-leaflet';
 import { divIcon } from 'leaflet';
 const UserMarker = ({ countryData }) => {
-    const {capitalInfo,latlng,capital} = countryData
+    const {latlng,capital} = countryData
     const [userLocation, setUserLocation] = useState(null);
     const map = useMap();
     const icon = divIcon({
@@ -14,7 +14,7 @@ const UserMarker = ({ countryData }) => {
         const getUserLocation = () => {
             navigator.geolocation.getCurrentPosition(
                 () => {
-                    const [latitude, longitude] = capitalInfo?.latlng || latlng;
+                    const [latitude, longitude] =  latlng;
                     setUserLocation([latitude, longitude]);
 
                 },
@@ -30,7 +30,7 @@ const UserMarker = ({ countryData }) => {
     // Zoom and pan the map to show the user's location
     useEffect(() => {
         if (userLocation) {
-            map.flyTo(userLocation, 10);
+            map.flyTo(userLocation, 2);
         }
     }, [userLocation, map]);
 
